@@ -1,21 +1,21 @@
 import React from 'react'
-import {View, StyleSheet, SafeAreaView, FlatList, Text} from 'react-native'
+import { View, StyleSheet, SafeAreaView, FlatList, Text } from 'react-native'
 import PeopleListItem from './PeopleListItem'
-
+eu
 const PeopleList = props => {
-    const {peoples, onPressItem} = props
+    const { peoples, onPressItem } = props
 
-    const renderItem = ({item}) => {
+    const renderItem = ({ item }) => {
         return (
-            <PeopleListItem 
-                key={item.name.first} 
+            <PeopleListItem
+                key={item.name.first}
                 people={item}
                 onPressItemDetails={onPressItem}
             />
         )
     }
 
-    const header= () => {
+    const header = () => {
         return (
             <View style={style.headerStyle}>
                 <Text style={style.titleStyle}>
@@ -31,7 +31,7 @@ const PeopleList = props => {
                 <FlatList
                     data={peoples}
                     renderItem={renderItem}
-                    keyExtractor={(item) => {item.name.first}}
+                    keyExtractor={(item) => { item.name.first }}
                     ListHeaderComponent={header}
                     stickyHeaderIndices={[0]}
                 />
