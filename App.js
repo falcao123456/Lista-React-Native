@@ -1,32 +1,32 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { NavigationContainer, StackActions } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
-import { createDrawerNavigator } from '@react-navigation/drawer'
-import PeopleDetailsPage from './src/pages/PeopleDetailsPage';
-import { PeoplePage } from './src/pages/PeoplePage'
-const Stack = createStackNavigator();
+import { BottomNavigation, Text } from 'react-native-paper';
+
+import { Pokemon } from './src/pages/PokemonPage'
+import { DragonBall } from './src/pages/DragonPage'
+
 //const Drawer = createDrawerNavigator();
 function App() {
+  const [index, setIndex] = React.useState(0);
+
+  const [routes] = React.useState([
+    { key: 'pokemon', title: 'Pokemon', icon: 'queue-music' },
+    { key: 'dragonball', title: 'Dragonball', icon: 'queue-music' },
+  ]);
+
+  const renderScene = BottomNavigation.SceneMap({
+    pokemon: Pokemon,
+    dragonball: DragonBall,
+  });
+
   return (
-    <View style={style.container}>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="PeoplePage">
-          <Stack.Screen name="Lista de PokeLipes" component={PeoplePage} />
-          <Stack.Screen name="Detalhe da Pessoa" component={PeopleDetailsPage} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </View>
+    <BottomNavigation
+      navigationState={{ index, routes }}
+      onIndexChange={setIndex}
+      renderScene={renderScene}
+    />
   )
 }
 
-const style = StyleSheet.create(
-  {
-    container: {
-      flex: 1,
-      backgroundColor: '#fff'
-    }
-  }
-)
+
 
 export default App;
