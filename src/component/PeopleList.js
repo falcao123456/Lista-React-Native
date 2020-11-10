@@ -2,7 +2,7 @@ import React from 'react'
 import { View, StyleSheet, SafeAreaView, FlatList, Text } from 'react-native'
 import PeopleListItem from './PeopleListItem'
 
-const PeopleList = props => {
+const Pokemon = props => {
     const { peoples, onPressItem } = props
 
     const renderItem = ({ item }) => {
@@ -60,4 +60,4 @@ const style = StyleSheet.create(
     }
 )
 
-export default PeopleList
+export default Pokemon
