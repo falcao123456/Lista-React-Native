@@ -9,8 +9,8 @@ function App() {
   const [index, setIndex] = React.useState(0);
 
   const [routes] = React.useState([
-    { key: 'pokemon', title: 'Pokemon', icon: 'cat' },
-    { key: 'digimon', title: 'Digimon', icon: 'turtle' },
+    { key: 'pokemon', title: 'Pokemon', icon: 'car' },
+    { key: 'dragonball', title: 'Dragonball', icon: 'car' },
   ]);
 
   const renderScene = BottomNavigation.SceneMap({

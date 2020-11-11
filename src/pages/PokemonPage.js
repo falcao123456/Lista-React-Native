@@ -12,23 +12,25 @@ export const Pokemon = () => {
   const [expanded, setExpanded] = React.useState(true);
 
   React.useEffect(() => {
+    console.log(pokeSelected)
     async function getpokemon() {
       const res = await apiFilipe.get();
       console.log(res.data.results);
       setPoke(res.data.results);
     }
     getpokemon();
-  }, []);
+  }, [pokeSelected]);
 
   const _goBack = () => alert("Tem certeza que deseja sair da pagina?");
 
   const handlePress = () => setExpanded(!expanded);
 
-  /* async function toggleOverlay(id) {
-    const res = await apiFilipe.get(/${id})
+  async function getpokemon(id) {
+    const res = await apiFilipe.get(`/${id}`)
     setPokeSelected(res.data)
     setVisible(!visible);
-  }; */
+    console.log(pokeSelected)
+  };
 
   return (
     <View>
@@ -38,10 +40,12 @@ export const Pokemon = () => {
         <Appbar.Content title="Lista de Pokemons" subtitle="Pokemons" />
       </Appbar.Header>
       <FlatList
+        keyExtractor={poke => poke.nome}
         data={poke}
         renderItem={({ item }) => {
           return (
             <List.Accordion
+              onPress={() => getpokemon(item.id)}
               title={item.name}
               left={(props) => <List.Icon {...props} icon="folder" />}
             >
