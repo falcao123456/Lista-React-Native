@@ -40,6 +40,7 @@ export const Pokemon = () => {
         <Appbar.Content title="Lista de Pokemons" subtitle="Pokemons" />
       </Appbar.Header>
       <FlatList
+        keyExtractor={poke => poke.nome}
         data={poke}
         renderItem={({ item }) => {
           return (
