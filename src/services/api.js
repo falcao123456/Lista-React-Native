@@ -6,6 +6,11 @@ export const apiFilipe = axios.create({
 
 
 export const apiTacio = axios.create({
-    baseURL: "https://pokeapi.co/api/v2/pokemon"
+    baseURL: "https://digimon-api.vercel.app/api/digimon"
+    
+
+    
+
+
 })
 

@@ -2,20 +2,20 @@ import React from 'react';
 import { BottomNavigation, Text } from 'react-native-paper';
 
 import { Pokemon } from './src/pages/PokemonPage'
-import { DragonBall } from './src/pages/DragonPage'
+import { Digimon } from './src/pages/DigiPage'
 
 //const Drawer = createDrawerNavigator();
 function App() {
   const [index, setIndex] = React.useState(0);
 
   const [routes] = React.useState([
-    { key: 'pokemon', title: 'Pokemon', icon: 'queue-music' },
-    { key: 'dragonball', title: 'Dragonball', icon: 'queue-music' },
+    { key: 'pokemon', title: 'Pokemon', icon: 'cat' },
+    { key: 'digimon', title: 'Digimon', icon: 'turtle' },
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
     pokemon: Pokemon,
-    dragonball: DragonBall,
+    digimon: Digimon,
   });
 
   return (
