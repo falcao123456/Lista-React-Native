@@ -19,7 +19,7 @@ export const Digimon = () => {
   }, []);
 
 
-  const _goBack = () => alert("Conheça os Guerreiros Z");
+  const _goBack = () => alert("Conheça os Digimons");
 
   const handlePress = () => setExpanded(!expanded);
 
@@ -30,7 +30,7 @@ export const Digimon = () => {
   }; */
 
   return (
-    <View>
+    <View style={{ marginBottom: 80, backgroundColor: '#00BFFF' }}>
       <StatusBar backgroundColor="#000" />
       <Appbar.Header>
         <Appbar.BackAction onPress={_goBack} />
@@ -42,7 +42,7 @@ export const Digimon = () => {
           return (
             <List.Accordion
             title={item.name}
-              left={(props) => <Avatar.Image size={24} source={{uri: item.img}} />}
+              left={(props) => <Avatar.Image size={60} source={{uri: item.img}} />}
             >
             <Card>
                
@@ -50,9 +50,11 @@ export const Digimon = () => {
               <Title>{item.name}</Title>
               <Paragraph>{item.level}</Paragraph>
               </Card.Content>
-              <Card.Cover source={{ uri: item.img }} />
+              
+              <Card.Cover  source={{ uri: item.img }} />
+              
               </Card>
-
+              
               
             </List.Accordion>
           );
