@@ -7,10 +7,5 @@ export const apiFilipe = axios.create({
 
 export const apiTacio = axios.create({
     baseURL: "https://digimon-api.vercel.app/api/digimon"
-    
-
-    
-
-
 })
 
