@@ -32,9 +32,8 @@ export const Digimon = () => {
   return (
     <View style={{ marginBottom: 80, backgroundColor: '#00BFFF' }}>
       <StatusBar backgroundColor="#000" />
-      <Appbar.Header>
-        <Appbar.BackAction onPress={_goBack} />
-        <Appbar.Content title="Lista Digimons" subtitle="Digimons" />
+      <Appbar.Header>  
+        <Appbar.Content title="Lista de Digimons" subtitle="Digimons" />
       </Appbar.Header>
       <FlatList
         data={digi}
@@ -51,7 +50,7 @@ export const Digimon = () => {
               <Paragraph>{item.level}</Paragraph>
               </Card.Content>
               
-              <Card.Cover  source={{ uri: item.img }} />
+              <Card.Cover source={{ uri: item.img }} />
               
               </Card>
               

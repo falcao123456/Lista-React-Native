@@ -38,7 +38,7 @@ export const Pokemon = () => {
   };
 
   return (
-    <View style={{ marginBottom: 80, backgroundColor: 'pink' }}>
+    <View style={{ marginBottom: 80, backgroundColor: '#7B68EE' }}>
       <StatusBar backgroundColor="#000" />
       <Appbar.Header>
         <Appbar.Content title="Lista de Pokemons" subtitle="Pokemons" />
@@ -52,7 +52,7 @@ export const Pokemon = () => {
             <List.Accordion
               onPress={() => selectPokemon(item.id)}
               title={item.name}
-              left={(props) => <Avatar.Image size={54} style={{ backgroundColor: '#000' }} source={{ uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png` }} />}
+              left={(props) => <Avatar.Image size={70} style={{ backgroundColor: '#000' }} source={{ uri: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png` }} />}
             >
               <List.Item title={item.name} />
               <List.Item title={item.url} />
